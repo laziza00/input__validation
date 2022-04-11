@@ -8,15 +8,12 @@ let form = document.querySelector('.form')
 
 
 
-
-
-
 userName.addEventListener('keyup', (e) => {
     let userNameValue = userName.value.trim().toLowerCase()
     let boxText1 = document.querySelector('.nametext')
 
     try{
-        if(userNameValue.match(/[a-z]/) !=null && userNameValue!= "" && userNameValue.match(/[0-9]/) ==null) {
+        if(userNameValue.match(/[a-z]/) !=null && userNameValue.match(/[!@#$%^&*]/)==null && userNameValue!= "" && userNameValue.match(/[0-9]/) ==null) {
             userName.classList.add('green__border')
             userName.classList.remove('red__border')
             boxText1.style.color ="green"
@@ -37,7 +34,7 @@ email.addEventListener('keyup', (e) => {
     let boxText2 = document.querySelector('.box__text2')
     let emailValue = email.value.trim()
 try {
-        if(emailValue.includes("@gmail.")  && emailValue !="" || emailValue.match(/[0-9]/) !=null ) {
+        if(emailValue.includes("@")  && emailValue !="" || emailValue.match(/[0-9]/) !=null ) {
             email.classList.add('green__border')
             email.classList.remove('red__border')
             boxText2.style.color ="green"
